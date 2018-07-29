@@ -2,23 +2,23 @@ import React, { Component } from "react";
 import "./App.css";
 import wole from "./wole.jpeg";
 import Menu from "./menu";
-import YoutubeVideo from "./YouTubeVideo"
-import words_bio from "./words"
+import YoutubeVideo from "./YouTubeVideo";
+import words_bio from "./words";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <img src={wole} className="Wole-logo" alt="wole" />
-          <h1>DOT O</h1>
-          <Menu/>
-        </div>
-        <div>
-          <YoutubeVideo url="https://www.youtube.com/embed/TUrkx0nYflo"/>
-          <p>
-            {words_bio}
-          </p>
+      <div className="container Wole-container">
+        <div className="row">
+          <div className="col-md-3">
+            <img src={wole} className="Wole-logo" alt="wole" />
+            <h1>DOT O</h1>
+            <Menu />
+          </div>
+          <div className="col-md-9">
+            <YoutubeVideo url="https://www.youtube.com/embed/TUrkx0nYflo" />
+            <p>{words_bio}</p>
+          </div>
         </div>
       </div>
     );

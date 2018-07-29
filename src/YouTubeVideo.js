@@ -2,16 +2,16 @@ import React from "react";
 
 function YoutubeVideo(props) {
   return (
-    <iframe
-      src={props.url}
-      title={props.url}
-      width="420"
-      height="315"
-      frameBorder="0"
-      allow="autoplay; encrypted-media"
-      allowFullScreen
-    />
+    <div className="embed-responsive embed-responsive-16by9">
+      <iframe
+        src={props.url}
+        title={props.url}
+        className="embed-responsive-item"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      />
+    </div>
   );
 }
-//<iframe  src="https://www.youtube.com/embed/TUrkx0nYflo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 export default YoutubeVideo;
