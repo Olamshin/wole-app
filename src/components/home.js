@@ -1,5 +1,5 @@
 import React from 'react';
-import YoutubeVideo from "../YouTubeVideo";
+import YoutubeVideo from "./YouTubeVideo";
 
 function Home(props) {
   return (

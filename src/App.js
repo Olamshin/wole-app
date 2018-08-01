@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Route, NavLink, HashRouter } from "react-router-dom";
 import "./App.css";
-import wole from "./wole.jpeg";
-import Menu from "./menu";
+import Menu from "./components/menu";
 import Home from "./components/home"
 import Music from "./components/music"
 import Biography from "./components/biography"
@@ -15,7 +14,7 @@ class App extends Component {
           <div className="row">
             <div className="col-md-3">
               <NavLink exact to="/">
-                <img src={wole} className="Wole-logo" alt="wole" />
+                <img src="wole.jpeg" className="Wole-logo" alt="wole" />
                 <h1>DOT O</h1>
               </NavLink>
               <Menu />

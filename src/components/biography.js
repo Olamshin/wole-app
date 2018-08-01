@@ -1,5 +1,5 @@
 import React from 'react';
-import words_bio from "../words";
+import words_bio from "../editables/words";
 
 function Biography(props) {
   return (
