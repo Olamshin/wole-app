@@ -50,8 +50,13 @@
   padding: 20px;
 }
 
-a, a:hover, a:focus{
+a, a:focus{
   color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -59,6 +64,6 @@ h1 {
   font-weight: 700;
 }
 
-li:hover, li:focus, .active {
+.active {
   font-weight: bold;
 }
