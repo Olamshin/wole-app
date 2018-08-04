@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Route, NavLink, HashRouter } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/menu";
-import Home from "./components/home"
-import Music from "./components/music"
-import Biography from "./components/biography"
+import Home from "./components/home";
+import Music from "./components/music";
+import Biography from "./components/biography";
 
 class App extends Component {
   render() {
@@ -13,15 +13,17 @@ class App extends Component {
         <div className="container Wole-container">
           <div className="row">
             <div className="col-md-3">
-              <NavLink exact to="/">
-                <img src="wole.jpeg" className="Wole-logo" alt="wole" />
-                <h1>DOT O</h1>
-              </NavLink>
-              <Menu />
+              <div className="fixed">
+                <NavLink exact to="/">
+                  <img src="dot_o_logo.jpg" className="Wole-logo" alt="dot_o" />
+                  <h1>DOT O</h1>
+                </NavLink>
+                <Menu />
+              </div>
             </div>
             <div id="content" className="col-md-9">
-              <Route exact path="/" component={Home}/>
-              <Route path="/biography" component={Biography}/>
+              <Route exact path="/" component={Home} />
+              <Route path="/biography" component={Biography} />
               <Route path="/music" component={Music} />
             </div>
           </div>
