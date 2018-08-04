@@ -4,7 +4,25 @@ function Music(props) {
   return (
     <div>
       <iframe
-        width="100%"
+        src="https://open.spotify.com/embed/album/6MjaVcWnQd9inlUzV3WCrN"
+        width="300"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        title="the trance"
+      />
+      <iframe
+        src="https://open.spotify.com/embed/album/068CkWL1216rhpxDynffc9"
+        width="300"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        title="ogun"
+      />
+      <iframe
+        width="600"
         height="300"
         scrolling="no"
         frameborder="no"
@@ -13,7 +31,7 @@ function Music(props) {
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/231697915&color=%23852f3f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
       />
       <iframe
-        width="100%"
+        width="600"
         height="300"
         scrolling="no"
         frameborder="no"
@@ -22,7 +40,7 @@ function Music(props) {
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/425788337&color=%23852f3f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
       />
       <iframe
-        width="100%"
+        width="600"
         height="300"
         scrolling="no"
         frameborder="no"

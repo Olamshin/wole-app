@@ -5,6 +5,7 @@ import Menu from "./components/menu";
 import Home from "./components/home";
 import Music from "./components/music";
 import Biography from "./components/biography";
+import Videos from "./components/videos";
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <HashRouter>
         <div className="container Wole-container">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-xs-3">
               <div className="fixed">
                 <NavLink exact to="/">
                   <img src="dot_o_logo.jpg" className="Wole-logo" alt="dot_o" />
@@ -21,10 +22,11 @@ class App extends Component {
                 <Menu />
               </div>
             </div>
-            <div id="content" className="col-md-9">
+            <div id="content" className="col-xs-9">
               <Route exact path="/" component={Home} />
               <Route path="/biography" component={Biography} />
               <Route path="/music" component={Music} />
+              <Route path="/videos" component={Videos} />
             </div>
           </div>
         </div>

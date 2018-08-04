@@ -50,3 +50,7 @@ h1 {
 .fixed {
   position: fixed;
 }
+
+iframe {
+  padding: 15px;
+}
