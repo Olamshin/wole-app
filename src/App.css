@@ -43,7 +43,7 @@ h1 {
 }
 
 .center {
-  margin: auto;
+  padding: auto 50px;
   display: block;
 }
 

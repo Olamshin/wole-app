@@ -4,8 +4,10 @@ import words_bio from "../editables/words";
 function Biography(props) {
   return (
     <div>
-      <img className="center" src="wole.jpeg" alt="wole" height="300px"/>
-      <p className="words">{words_bio}</p>
+      <div style={{ margin: "0 30px" }}>
+        <img className="center img-responsive" src="wole.jpeg" alt="wole" />
+        <p className="words">{words_bio}</p>
+      </div>
     </div>
   );
 }
