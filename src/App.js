@@ -18,46 +18,27 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    this.updateDimensions();
-    window.addEventListener("resize", this.updateDimensions.bind(this));
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions.bind(this));
-  }
-
-  updateDimensions() {
-    //need to implement this better in a generic way
-    console.log(this);
-    var parentwidth = this.menu_parent.current.offsetWidth;
-    this.setState({ menu_width: parentwidth });
-  }
-
   render() {
     return (
       <HashRouter>
         <div className="container Wole-container">
           <div className="row">
-            <div className="col-xs-3" ref={this.menu_parent}>
-              <div
-                className="fixed"
-                ref={this.menu_child}
-                style={{ width: this.state.menu_width }}
-              >
+            <div>
+              <div>
                 <NavLink exact to="/">
                   <img
                     src="dot_o_logo.jpg"
-                    className="img-responsive"
+                    className="img-responsive center-block"
                     alt="dot_o"
-                    style={{padding: '0 15px'}}
+                    style={{ height: "100px", "margin-bottom": "10px" }}
                   />
-                  <h1>DOT O</h1>
                 </NavLink>
-                <Menu />
               </div>
+              <Menu />
             </div>
-            <div id="content" className="col-xs-9">
+          </div>
+          <div className="row">
+            <div id="content" style={{ margin: "10px 50px" }}>
               <Route exact path="/" component={Home} />
               <Route path="/biography" component={Biography} />
               <Route path="/music" component={Music} />

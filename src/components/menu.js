@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 
 function Menu(props) {
   return (
-    <ul className="Wole-menu">
-      <li>
+    <ul className="nav nav-pills nav-justified">
+      <li role="presentation">
         <NavLink to="/biography">BIOGRAPHY</NavLink>
       </li>
-      <li><NavLink to="/music">MUSIC</NavLink></li>
-      <li><NavLink to="/videos">VIDEOS</NavLink></li>
-      <li><NavLink to="/shows">SHOWS</NavLink></li>
+      <li role="presentation"><NavLink to="/music">MUSIC</NavLink></li>
+      <li role="presentation"><NavLink to="/videos">VIDEOS</NavLink></li>
+      <li role="presentation"><NavLink to="/shows">SHOWS</NavLink></li>
     </ul>
   );
 }
