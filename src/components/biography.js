@@ -6,7 +6,7 @@ function Biography(props) {
     <div>
       <div style={{ margin: "0 30px" }}>
         <img className="center img-responsive" src="wole.jpeg" alt="wole" />
-        <p className="words">{words_bio}</p>
+        {words_bio}
       </div>
     </div>
   );

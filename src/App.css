@@ -1,14 +1,12 @@
-.Wole-logo {
-  height: 180px;
-}
-
-
 .Wole-container {
   padding: 20px;
   margin-left: 0px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.wole-menu a{
+  color: #D93A2F;
+}
 
 h1 {
   font-weight: 700;

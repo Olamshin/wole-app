@@ -43,6 +43,8 @@ class App extends Component {
               <Route path="/biography" component={Biography} />
               <Route path="/music" component={Music} />
               <Route path="/videos" component={Videos} />
+              {/* <Route path="/blog" component={} />
+              <Route path="/shows" component={} /> */}
             </div>
           </div>
         </div>

@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
 import YoutubeVideo from "./YouTubeVideo";
+import FeaturedArtist from "./featured_artist";
 
 function Home(props) {
   return (
-    <YoutubeVideo url="https://www.youtube.com/embed/VdTu1NEnM4Q" />
+    <div>
+      <YoutubeVideo url="https://www.youtube.com/embed/VdTu1NEnM4Q" />
+      <FeaturedArtist />
+    </div>
   );
 }
 
-export default Home;
+export default Home; 
