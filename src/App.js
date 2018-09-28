@@ -45,6 +45,7 @@ class App extends Component {
               <Route path="/videos" component={Videos} />
               {/* <Route path="/blog" component={} />
               <Route path="/shows" component={} /> */}
+              <hr/>
             </div>
             <div className="row" style={{ "text-align": "center" }}>
               <div className="col-sm-3" />
