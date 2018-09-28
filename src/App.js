@@ -46,6 +46,19 @@ class App extends Component {
               {/* <Route path="/blog" component={} />
               <Route path="/shows" component={} /> */}
             </div>
+            <div className="row" style={{ "text-align": "center" }}>
+              <div className="col-sm-3" />
+              <div className="col-sm-2" >
+                <a className="theme_color_red" href="">INSTAGRAM</a>
+              </div>
+              <div className="col-sm-2">
+                <a className="theme_color_red" href="">FACEBOOK</a>
+              </div>
+              <div className="col-sm-2">
+                <a className="theme_color_red" href="">TWITTER</a>
+              </div>
+              <div className="col-sm-3" />
+            </div>
           </div>
         </div>
       </HashRouter>

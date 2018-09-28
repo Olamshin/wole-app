@@ -52,7 +52,7 @@ export var words_bio = (
 );
 
 export var featured_artist = `
-orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
 ut euismod leo. Fusce et posuere nisi. Nulla pretium lectus ex, sit
 amet venenatis eros semper at. Aenean aliquam lobortis orci,
 lobortis dictum massa mollis eget. Vivamus sed interdum elit. Proin

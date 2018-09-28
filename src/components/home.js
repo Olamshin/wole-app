@@ -6,6 +6,7 @@ function Home(props) {
   return (
     <div>
       <YoutubeVideo url="https://www.youtube.com/embed/VdTu1NEnM4Q" />
+      <hr/>
       <FeaturedArtist />
     </div>
   );
