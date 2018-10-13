@@ -4,7 +4,7 @@ import {featured_artist} from "../editables/words";
 function FeaturedArtist(props) {
   return (
     <div style={{ margin: "10px 50px" }}>
-      <h1 className="text-center theme_color_red">Featured Artist</h1>
+      <h1 className="text-center theme_color_red">FEATURED ARTIST</h1>
       <img
         src="featured_artist.jpg"
         className="img-responsive center-block"
