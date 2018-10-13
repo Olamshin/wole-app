@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, NavLink, HashRouter } from "react-router-dom";
+import { Route, NavLink, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/menu";
 import Home from "./components/home";
@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div className="container Wole-container">
           <div className="row">
             <div>
@@ -45,24 +45,35 @@ class App extends Component {
               <Route path="/videos" component={Videos} />
               {/* <Route path="/blog" component={} />
               <Route path="/shows" component={} /> */}
-              <hr/>
+              <hr />
             </div>
             <div className="row" style={{ "text-align": "center" }}>
-              <div className="col-sm-3" />
-              <div className="col-sm-2" >
-                <a className="theme_color_red" href="">INSTAGRAM</a>
+              <div className="col-sm-2" />
+              <div className="col-sm-2">
+                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dot.o_/">
+                  INSTAGRAM
+                </a>
               </div>
               <div className="col-sm-2">
-                <a className="theme_color_red" href="">FACEBOOK</a>
+                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/dotoinfo/">
+                  FACEBOOK
+                </a>
               </div>
               <div className="col-sm-2">
-                <a className="theme_color_red" href="">TWITTER</a>
+                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://twitter.com/wole_dot_o">
+                  TWITTER
+                </a>
               </div>
-              <div className="col-sm-3" />
+              <div className="col-sm-2">
+                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.snapchat.com/add/wole.o">
+                  SNAPCHAT
+                </a>
+              </div>
+              <div className="col-sm-2" />
             </div>
           </div>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
