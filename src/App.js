@@ -22,12 +22,12 @@ class App extends Component {
     return (
       <HashRouter>
         <div className="container Wole-container">
-          <div className="row" style={{backgroundColor:"white"}}>
+          <div className="row">
             <div>
               <div>
                 <NavLink exact to="/">
                   <img
-                    src="dot_o_logo.jpg"
+                    src="dot_o_logo.png"
                     className="img-responsive center-block"
                     alt="dot_o"
                     style={{ height: "100px", marginBottom: "10px", marginTop: "10px" }}
