@@ -6,6 +6,7 @@ import Home from "./components/home";
 import Music from "./components/music";
 import Biography from "./components/biography";
 import Videos from "./components/videos";
+import Blog from "./components/blog";
 import Prismic from "prismic-javascript"
 
 class App extends Component {
@@ -13,7 +14,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      bio_words: null
+      bio_words: null,
+      posts: null
     };
 
     const apiEndpoint = 'https://wole-app.prismic.io/api/v2';
@@ -22,6 +24,11 @@ class App extends Component {
       api.query(Prismic.Predicates.at('document.type', 'bio_wo')).then(response => {
         if (response) {
           this.setState({ bio_words: response.results[0] });
+        }
+      });
+      api.query(Prismic.Predicates.at('document.type', 'post')).then(response => {
+        if (response) {
+          this.setState({ posts: response.results });
         }
       });
     });
@@ -53,8 +60,8 @@ class App extends Component {
               <Route path="/biography" render={props => <Biography words={this.state.bio_words}/>} />
               <Route path="/music" component={Music} />
               <Route path="/videos" component={Videos} />
-              {/* <Route path="/blog" component={} />
-              <Route path="/shows" component={} /> */}
+              <Route path="/blog" render={props => <Blog posts={this.state.posts}/>} />
+              {/* <Route path="/shows" component={} />  */}
               <hr />
             </div>
             <div className="row" style={{ textAlign: "center" }}>
