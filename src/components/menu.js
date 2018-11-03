@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Menu(props) {
   return (
-    <ul className="wole-menu nav nav-pills nav-justified" style={{ color: "red" , "margin-left": "15px"}}>
+    <ul className="wole-menu nav nav-pills nav-justified" style={{ color: "red" , marginLeft: "15px"}}>
       <li role="presentation">
         <NavLink to="/biography">BIOGRAPHY</NavLink>
       </li>

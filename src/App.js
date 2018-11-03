@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, NavLink, BrowserRouter } from "react-router-dom";
+import { Route, NavLink, HashRouter } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/menu";
 import Home from "./components/home";
@@ -20,9 +20,9 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="container Wole-container">
-          <div className="row">
+          <div className="row" style={{backgroundColor:"white"}}>
             <div>
               <div>
                 <NavLink exact to="/">
@@ -30,7 +30,7 @@ class App extends Component {
                     src="dot_o_logo.jpg"
                     className="img-responsive center-block"
                     alt="dot_o"
-                    style={{ height: "100px", "margin-bottom": "10px" }}
+                    style={{ height: "100px", marginBottom: "10px", marginTop: "10px" }}
                   />
                 </NavLink>
               </div>
@@ -38,7 +38,8 @@ class App extends Component {
             </div>
           </div>
           <div className="row">
-            <div id="content" style={{ margin: "10px 50px" }}>
+            
+            <div id="content" style={{ margin: "10px 60px" }}>
               <Route exact path="/" component={Home} />
               <Route path="/biography" component={Biography} />
               <Route path="/music" component={Music} />
@@ -47,33 +48,54 @@ class App extends Component {
               <Route path="/shows" component={} /> */}
               <hr />
             </div>
-            <div className="row" style={{ "text-align": "center" }}>
+            <div className="row" style={{ textAlign: "center" }}>
               <div className="col-sm-2" />
               <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dot.o_/">
+                <a
+                  className="theme_color_red"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.instagram.com/dot.o_/"
+                >
                   INSTAGRAM
                 </a>
               </div>
               <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/dotoinfo/">
+                <a
+                  className="theme_color_red"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.facebook.com/dotoinfo/"
+                >
                   FACEBOOK
                 </a>
               </div>
               <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://twitter.com/wole_dot_o">
+                <a
+                  className="theme_color_red"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://twitter.com/wole_dot_o"
+                >
                   TWITTER
                 </a>
               </div>
               <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.snapchat.com/add/wole.o">
+                <a
+                  className="theme_color_red"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.snapchat.com/add/wole.o"
+                >
                   SNAPCHAT
                 </a>
               </div>
               <div className="col-sm-2" />
-            </div>
+              </div>
+            
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
