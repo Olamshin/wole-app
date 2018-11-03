@@ -6,16 +6,25 @@ import Home from "./components/home";
 import Music from "./components/music";
 import Biography from "./components/biography";
 import Videos from "./components/videos";
+import Prismic from "prismic-javascript"
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.menu_parent = React.createRef();
-    this.menu_child = React.createRef();
 
     this.state = {
-      menu_width: "25%"
+      bio_words: null
     };
+
+    const apiEndpoint = 'https://wole-app.prismic.io/api/v2';
+    
+    Prismic.api(apiEndpoint).then(api => {
+      api.query(Prismic.Predicates.at('document.type', 'bio_wo')).then(response => {
+        if (response) {
+          this.setState({ bio_words: response.results[0] });
+        }
+      });
+    });
   }
 
   render() {
@@ -41,7 +50,7 @@ class App extends Component {
             
             <div id="content" style={{ margin: "10px 60px" }}>
               <Route exact path="/" component={Home} />
-              <Route path="/biography" component={Biography} />
+              <Route path="/biography" render={props => <Biography words={this.state.bio_words}/>} />
               <Route path="/music" component={Music} />
               <Route path="/videos" component={Videos} />
               {/* <Route path="/blog" component={} />
