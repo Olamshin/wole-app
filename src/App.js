@@ -15,7 +15,8 @@ class App extends Component {
 
     this.state = {
       bio_words: null,
-      posts: null
+      posts: null,
+      latest_show: null
     };
 
     const apiEndpoint = 'https://wole-app.prismic.io/api/v2';
@@ -29,6 +30,11 @@ class App extends Component {
       api.query(Prismic.Predicates.at('document.type', 'post')).then(response => {
         if (response) {
           this.setState({ posts: response.results });
+        }
+      });
+      api.query(Prismic.Predicates.at('document.type', 'latest_show')).then(response => {
+        if (response) {
+          this.setState({ latest_show: response.results });
         }
       });
     });
@@ -56,7 +62,7 @@ class App extends Component {
           <div className="row">
             
             <div id="content" style={{ margin: "10px 60px" }}>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={props => <Home show_img={this.state.latest_show}/>} />
               <Route path="/biography" render={props => <Biography words={this.state.bio_words}/>} />
               <Route path="/music" component={Music} />
               <Route path="/videos" component={Videos} />
