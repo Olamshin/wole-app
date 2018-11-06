@@ -7,7 +7,7 @@ function Menu(props) {
       <li role="presentation">
         <NavLink to="/biography">BIOGRAPHY</NavLink>
       </li>
-      <li role="presentation">
+      <li className="menuItem" role="presentation">
         <NavLink to="/shows">SHOWS</NavLink>
       </li>
       <li role="presentation">
@@ -18,6 +18,9 @@ function Menu(props) {
       </li>
       <li role="presentation">
         <NavLink to="/blog">BLOG</NavLink>
+      </li>
+      <li role="presentation">
+        <NavLink to="/shop">SHOP</NavLink>
       </li>
       
     </ul>

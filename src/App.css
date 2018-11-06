@@ -9,9 +9,15 @@ body {
   color: white;
 }
 
-.wole-menu a{
-  color: #D93A2F;
+.wole-menu a {
+  color: white;
 }
+
+.nav>li>a:hover {
+  background-color: #D93A2F;
+}
+
+/* #D93A2F */
 
 h1 {
   font-weight: 700;
