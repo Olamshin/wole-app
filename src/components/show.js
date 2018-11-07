@@ -5,7 +5,7 @@ function Show(props) {
     // console.log(props.show_img[0].data.image.url);
     return (
         <div>
-          <h1 className="text-center theme_color_red">Latest Show</h1>
+          <h1 className="text-center theme_color_red">Latest Event</h1>
           <img
             src={props.show_img[0].data.image.url}
             className="img-responsive center-block"
