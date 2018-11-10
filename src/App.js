@@ -7,6 +7,7 @@ import Music from "./components/music";
 import Biography from "./components/biography";
 import Videos from "./components/videos";
 import Blog from "./components/blog";
+import Shop from "./components/shop";
 import Prismic from "prismic-javascript"
 
 class App extends Component {
@@ -67,6 +68,7 @@ class App extends Component {
               <Route path="/music" component={Music} />
               <Route path="/videos" component={Videos} />
               <Route path="/blog" render={props => <Blog posts={this.state.posts}/>} />
+              <Route path="/shop" component={Shop} />
               {/* <Route path="/shows" component={} />  */}
               <hr />
             </div>
