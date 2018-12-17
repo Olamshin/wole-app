@@ -3,7 +3,6 @@ import { RichText } from "prismic-reactjs";
 
 function Shop(props) {
   if (props.shop_items) {
-    console.log(props.shop_items)
     var shop_items = props.shop_items.map(function (item, index) {
       return (
         <div key={item.id} className="row" style={{ margin: "10px" }}>

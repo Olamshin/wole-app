@@ -2,7 +2,7 @@ import React from "react";
 
 function YoutubeVideo(props) {
   return (
-    <div style={{marginLeft:"30px"}} className="embed-responsive embed-responsive-16by9">
+    <div key={props.key} style={{marginLeft:"30px"}} className="embed-responsive embed-responsive-16by9">
       <iframe
         src={props.url}
         title={props.url}

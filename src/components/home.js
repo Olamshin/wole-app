@@ -4,15 +4,22 @@ import FeaturedArtist from "./featured_artist";
 import Show from "./show";
 
 function Home(props) {
+  var video;
+  if (props.home_video) {
+    var home_video = props.home_video[0].data
+    video = <YoutubeVideo url={home_video.youtube_link.url} />
+  } else {
+    video = (<p>Loading Home Video...</p>)
+  }
   return (
     <div className="row">
-      <YoutubeVideo url="https://www.youtube.com/embed/VdTu1NEnM4Q" />
+      {video}
       <hr />
       <div className="col-sm-6">
-        <FeaturedArtist />
+        <FeaturedArtist artist={props.artist} />
       </div>
       <div className="col-sm-6">
-        <Show {...props}/>
+        <Show {...props} />
       </div>
     </div>
   );

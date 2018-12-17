@@ -21,7 +21,7 @@ class App extends Component {
     };
 
     const apiEndpoint = 'https://wole-app.prismic.io/api/v2';
-    
+
     Prismic.api(apiEndpoint).then(api => {
       api.query(Prismic.Predicates.at('document.type', 'bio_wo')).then(response => {
         if (response) {
@@ -43,6 +43,22 @@ class App extends Component {
           this.setState({ shop_items: response.results });
         }
       });
+      api.query(Prismic.Predicates.at('document.type', 'featured_artist')).then(response => {
+        if (response) {
+          this.setState({ featured_artist: response.results });
+        }
+      });
+      api.query(Prismic.Predicates.at('document.type', 'home_video')).then(response => {
+        if (response) {
+          this.setState({ home_video: response.results });
+        }
+      });
+      api.query(Prismic.Predicates.at('document.type', 'videos_tab_item')).then(response => {
+        if (response) {
+          this.setState({ videos_tab_items: response.results });
+        }
+      });
+
     });
   }
 
@@ -66,14 +82,14 @@ class App extends Component {
             </div>
           </div>
           <div className="row">
-            
+
             <div id="content" style={{ margin: "10px 60px" }}>
-              <Route exact path="/" render={props => <Home show_img={this.state.latest_show}/>} />
-              <Route path="/biography" render={props => <Biography words={this.state.bio_words}/>} />
+              <Route exact path="/" render={props => <Home show_img={this.state.latest_show} artist={this.state.featured_artist} home_video={this.state.home_video} />} />
+              <Route path="/biography" render={props => <Biography words={this.state.bio_words} />} />
               <Route path="/music" component={Music} />
-              <Route path="/videos" component={Videos} />
-              <Route path="/blog" render={props => <Blog posts={this.state.posts}/>} />
-              <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items}/>} />
+              <Route path="/videos" render={props => <Videos video_items={this.state.videos_tab_items}/>} />
+              <Route path="/blog" render={props => <Blog posts={this.state.posts} />} />
+              <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items} />} />
               <hr />
             </div>
             <div className="row" style={{ textAlign: "center" }}>
@@ -119,8 +135,8 @@ class App extends Component {
                 </a>
               </div>
               <div className="col-sm-2" />
-              </div>
-            
+            </div>
+
           </div>
         </div>
       </HashRouter>

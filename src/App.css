@@ -17,6 +17,10 @@ body {
   background-color: #D93A2F;
 }
 
+.nav>li>a:focus{
+  color: black;
+}
+
 /* #D93A2F */
 
 h1 {

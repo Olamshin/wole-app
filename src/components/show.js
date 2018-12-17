@@ -2,7 +2,6 @@ import React from "react";
 
 function Show(props) {
   if (props.show_img) {
-    // console.log(props.show_img[0].data.image.url);
     return (
         <div>
           <h1 className="text-center theme_color_red">Latest Event</h1>

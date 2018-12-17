@@ -2,12 +2,18 @@ import React from "react";
 import YoutubeVideo from "./YouTubeVideo";
 
 function Videos(props) {
+  var video_objects = (<p>Loading Videos...</p>)
+  if(props.video_items)
+  {
+    //sort the videos by order property
+    var videos = props.video_items.sort((a,b)=>{return a.data.order - b.data.order})
+    video_objects = videos.map(function(video, index){
+      return (<YoutubeVideo url={video.data.youtube_link.url} key={video.id}/>)
+    })
+  }
   return (
     <div>
-      <YoutubeVideo url="https://www.youtube.com/embed/VdTu1NEnM4Q" />
-      <YoutubeVideo url="https://www.youtube.com/embed/TUrkx0nYflo" />
-      <YoutubeVideo url="https://www.youtube.com/embed/_sa-UXEJJPY" />
-      <YoutubeVideo url="https://www.youtube.com/embed/ysoPjjQMmqw" />
+      {video_objects}
     </div>
   );
 }

@@ -4,7 +4,6 @@ import { RichText } from "prismic-reactjs";
 function Blog(props) {
   if (props.posts) {
     const posts = props.posts;
-    console.log(posts);
     var postobjects = posts.map(function(post, index) {
       return (
         <div key={post.id} style={{ margin: "0 30px" }}>
