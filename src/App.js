@@ -38,6 +38,11 @@ class App extends Component {
           this.setState({ latest_show: response.results });
         }
       });
+      api.query(Prismic.Predicates.at('document.type', 'shop_item')).then(response => {
+        if (response) {
+          this.setState({ shop_items: response.results });
+        }
+      });
     });
   }
 
@@ -68,8 +73,7 @@ class App extends Component {
               <Route path="/music" component={Music} />
               <Route path="/videos" component={Videos} />
               <Route path="/blog" render={props => <Blog posts={this.state.posts}/>} />
-              <Route path="/shop" component={Shop} />
-              {/* <Route path="/shows" component={} />  */}
+              <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items}/>} />
               <hr />
             </div>
             <div className="row" style={{ textAlign: "center" }}>
