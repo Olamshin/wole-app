@@ -3,20 +3,26 @@ import React from "react";
 function Show(props) {
   if (props.show_img) {
     return (
-        <div>
-          <h1 className="text-center theme_color_red">Latest Event</h1>
+      <div id="latest_event">
+        <a
+          href={props.show_link}
+          className="theme_color_red"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <h1 className="text-center">Latest Event</h1>
           <img
             src={props.show_img[0].data.image.url}
             className="img-responsive center-block"
             alt="dot_o"
             style={{ height: "500px" }}
           />
-        </div>
-      );
+        </a>
+      </div>
+    );
   }
 
-  
-  return (<p>Loading Image...</p>)
+  return <p>Loading Image...</p>;
 }
 
 export default Show;

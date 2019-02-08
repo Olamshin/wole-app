@@ -50,6 +50,10 @@ iframe {
 }
 
 .theme_color_red {
-  color: #D93A2F
+  color: #D93A2F;
 }
 
+#latest_event>a:hover, #latest_event>a:focus{
+  color: #D93A2F;
+  text-decoration: none;
+}
