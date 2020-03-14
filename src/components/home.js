@@ -1,6 +1,5 @@
 import React from "react";
 import YoutubeVideo from "./YouTubeVideo";
-import FeaturedArtist from "./featured_artist";
 import Show from "./show";
 
 function Home(props) {
@@ -15,11 +14,12 @@ function Home(props) {
     <div className="row">
       {video}
       <hr />
-      <div className="col-sm-6">
-        <FeaturedArtist artist={props.artist} />
-      </div>
-      <div className="col-sm-6">
-        <Show {...props} />
+      <div className="row">
+        <div className="col-sm-2"></div>
+        <div className="col-sm-8">
+          <Show {...props} />
+        </div>
+        <div className="col-sm-2"></div>
       </div>
     </div>
   );
