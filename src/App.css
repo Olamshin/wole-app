@@ -10,13 +10,26 @@ body {
 }
 
 .logo {
-  height: 100px;
+  height: 120px;
   margin-bottom: 10px;
   margin-top: 10px;
   
   overflow: hidden;
   transition-duration: 0.8s;
   transition-property: transform;
+}
+
+.social-container{
+  text-align: center;
+}
+
+.social-container a{
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.social-logo{
+  height: 30px;
 }
 
 .Wole-container {

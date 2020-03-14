@@ -8,6 +8,7 @@ import Biography from "./components/biography";
 import Videos from "./components/videos";
 import Blog from "./components/blog";
 import Shop from "./components/shop";
+import SocialIcons from "./components/SocialIcons";
 import Prismic from "prismic-javascript"
 
 class App extends Component {
@@ -75,7 +76,9 @@ class App extends Component {
         <div className="row">
           <div>
             <div>
-              <div className="col-md-5"></div>
+              <div className="col-md-5">
+                <SocialIcons />
+              </div>
               <div className="col-md-2">
                 <NavLink exact to="/">
                   <img src="dot_o_logo.png" className="logo img-responsive center-block" alt="dot_o" />
@@ -99,31 +102,6 @@ class App extends Component {
             <Route path="/videos" render={props => <Videos video_items={this.state.videos_tab_items} />} />
             <Route path="/blog" render={props => <Blog posts={this.state.posts} />} />
             <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items} />} />
-            <hr />
-          </div>
-          <div className="row" style={{ textAlign: "center" }}>
-            <div className="col-sm-2" />
-            <div className="col-sm-2">
-              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dot.o_/">
-                INSTAGRAM
-                </a>
-            </div>
-            <div className="col-sm-2">
-              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/dotoinfo/">
-                FACEBOOK
-                </a>
-            </div>
-            <div className="col-sm-2">
-              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://twitter.com/wole_dot_o">
-                TWITTER
-                </a>
-            </div>
-            <div className="col-sm-2">
-              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.snapchat.com/add/wole.o">
-                SNAPCHAT
-                </a>
-            </div>
-            <div className="col-sm-2" />
           </div>
         </div>
       </div>
