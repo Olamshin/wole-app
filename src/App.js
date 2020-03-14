@@ -75,9 +75,13 @@ class App extends Component {
         <div className="row">
           <div>
             <div>
-              <NavLink exact to="/">
-                <img src="dot_o_logo.png" className="img-responsive center-block" alt="dot_o" style={{ height: "100px", marginBottom: "10px", marginTop: "10px" }} />
-              </NavLink>
+              <div className="col-md-5"></div>
+              <div className="col-md-2">
+                <NavLink exact to="/">
+                  <img src="dot_o_logo.png" className="logo img-responsive center-block" alt="dot_o" />
+                </NavLink>
+              </div>
+              <div className="col-md-5"></div>
             </div>
             <Menu />
           </div>
