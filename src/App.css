@@ -34,10 +34,8 @@ body {
 .wole-menu a {
   color: white;
   font-size: 20px;
-}
-
-.wole-menu a {
   margin: 2px;
+  transition: background-color 0.3s;
 }
 
 .wole-menu>li>a:hover {
