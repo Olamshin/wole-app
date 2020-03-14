@@ -60,8 +60,8 @@ class App extends Component {
       });
       api.query(Prismic.Predicates.at('document.type', 'show_link')).then(response => {
         if (response) {
-          if(response.results[0]){
-          this.setState({ show_link: response.results[0].data.link.url });
+          if (response.results[0]) {
+            this.setState({ show_link: response.results[0].data.link.url });
           }
         }
       });
@@ -71,59 +71,59 @@ class App extends Component {
 
   render() {
     return <HashRouter>
-        <div className="container Wole-container">
-          <div className="row">
+      <div className="container Wole-container">
+        <div className="row">
+          <div>
             <div>
-              <div>
-                <NavLink exact to="/">
-                  <img src="dot_o_logo.png" className="img-responsive center-block" alt="dot_o" style={{ height: "100px", marginBottom: "10px", marginTop: "10px" }} />
-                </NavLink>
-              </div>
-              <Menu />
+              <NavLink exact to="/">
+                <img src="dot_o_logo.png" className="img-responsive center-block" alt="dot_o" style={{ height: "100px", marginBottom: "10px", marginTop: "10px" }} />
+              </NavLink>
             </div>
-          </div>
-          <div className="row">
-            <div id="content" style={{ margin: "10px 60px" }}>
-              <Route exact path="/" 
-                    render={props => <Home 
-                        show_img={this.state.latest_show} 
-                        artist={this.state.featured_artist} 
-                        home_video={this.state.home_video}
-                        show_link={this.state.show_link} />} />
-              <Route path="/biography" render={props => <Biography words={this.state.bio_words} />} />
-              <Route path="/music" component={Music} />
-              <Route path="/videos" render={props => <Videos video_items={this.state.videos_tab_items} />} />
-              <Route path="/blog" render={props => <Blog posts={this.state.posts} />} />
-              <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items} />} />
-              <hr />
-            </div>
-            <div className="row" style={{ textAlign: "center" }}>
-              <div className="col-sm-2" />
-              <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dot.o_/">
-                  INSTAGRAM
-                </a>
-              </div>
-              <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/dotoinfo/">
-                  FACEBOOK
-                </a>
-              </div>
-              <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://twitter.com/wole_dot_o">
-                  TWITTER
-                </a>
-              </div>
-              <div className="col-sm-2">
-                <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.snapchat.com/add/wole.o">
-                  SNAPCHAT
-                </a>
-              </div>
-              <div className="col-sm-2" />
-            </div>
+            <Menu />
           </div>
         </div>
-      </HashRouter>;
+        <div className="row">
+          <div id="content" style={{ margin: "10px 60px" }}>
+            <Route exact path="/"
+              render={props => <Home
+                show_img={this.state.latest_show}
+                artist={this.state.featured_artist}
+                home_video={this.state.home_video}
+                show_link={this.state.show_link} />} />
+            <Route path="/biography" render={props => <Biography words={this.state.bio_words} />} />
+            <Route path="/music" component={Music} />
+            <Route path="/videos" render={props => <Videos video_items={this.state.videos_tab_items} />} />
+            <Route path="/blog" render={props => <Blog posts={this.state.posts} />} />
+            <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items} />} />
+            <hr />
+          </div>
+          <div className="row" style={{ textAlign: "center" }}>
+            <div className="col-sm-2" />
+            <div className="col-sm-2">
+              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dot.o_/">
+                INSTAGRAM
+                </a>
+            </div>
+            <div className="col-sm-2">
+              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/dotoinfo/">
+                FACEBOOK
+                </a>
+            </div>
+            <div className="col-sm-2">
+              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://twitter.com/wole_dot_o">
+                TWITTER
+                </a>
+            </div>
+            <div className="col-sm-2">
+              <a className="theme_color_red" rel="noopener noreferrer" target="_blank" href="https://www.snapchat.com/add/wole.o">
+                SNAPCHAT
+                </a>
+            </div>
+            <div className="col-sm-2" />
+          </div>
+        </div>
+      </div>
+    </HashRouter>;
   }
 }
 

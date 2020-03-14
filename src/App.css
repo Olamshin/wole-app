@@ -9,16 +9,27 @@ body {
   color: white;
 }
 
-.wole-menu a {
-  color: white;
+.wole-menu {
+  color: red;
+  margin-left: 15px;
 }
 
-.nav>li>a:hover {
+.wole-menu a {
+  color: white;
+  font-size: 20px;
+}
+
+.wole-menu a {
+  margin: 2px;
+}
+
+.wole-menu>li>a:hover {
   background-color: #D93A2F;
 }
 
-.nav>li>a:focus{
+.wole-menu>li>a:focus{
   color: black;
+  font-size: 25px;
 }
 
 /* #D93A2F */

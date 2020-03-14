@@ -1,5 +1,4 @@
 import React from "react";
-import { RichText } from "prismic-reactjs";
 
 function Shop(props) {
   if (props.shop_items) {
