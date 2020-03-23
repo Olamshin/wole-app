@@ -1,4 +1,5 @@
 import React from "react";
+import PrismicDOM from "prismic-dom"
 
 function Shop(props) {
   if (props.shop_items) {
@@ -18,11 +19,9 @@ function Shop(props) {
             position: "relative",
             bottom: "-20px",
             marginLeft: "10px"
-          }}>
-            <div style={{ fontSize: "35px", textAlign: "center" }}>
-              ${item.data.price[0].text}
-            </div>
-            <button className="btn btn-success center-block">Purchase</button>
+          }}
+          dangerouslySetInnerHTML={{ __html:PrismicDOM.RichText.asText(item.data.paypal_html, null)}}
+          >
           </div>
         </div>
       )

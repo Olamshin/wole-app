@@ -4,6 +4,24 @@ function Music(props) {
   return (
     <div>
       <iframe
+        src="https://open.spotify.com/embed/album/1kUsrHHtJ1sPq8gCXUS9w0" 
+        width="300" 
+        height="380" 
+        frameborder="0" 
+        allowtransparency="true" 
+        allow="encrypted-media"
+        title="yee yee">
+      </iframe>
+      <iframe 
+        src="https://open.spotify.com/embed/album/2yGFzlYoqpY6w35zFnxBxY"
+        width="300" 
+        height="380" 
+        frameborder="0" 
+        allowtransparency="true" 
+        allow="encrypted-media"
+        title="Deliberate">
+      </iframe>
+      <iframe
         src="https://open.spotify.com/embed/album/6MjaVcWnQd9inlUzV3WCrN"
         width="300"
         height="380"
