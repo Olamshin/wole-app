@@ -7,7 +7,7 @@ function Shop(props) {
       return (
         <div key={item.id} className="row" style={{ margin: "10px" }}>
           <img src={item.data.image.url}
-            className="img-responsive"
+            className="img-fluid"
             alt={item.data.image.alt}
             style={{
               height: "200px",

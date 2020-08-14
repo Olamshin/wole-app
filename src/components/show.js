@@ -13,7 +13,7 @@ function Show(props) {
           <h1 className="text-center">Latest Event</h1>
           <img
             src={props.show_img[0].data.image.url}
-            className="img-responsive center-block"
+            className="img-fluid center-block"
             alt="dot_o"
             style={{ height: "500px" }}
           />

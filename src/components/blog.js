@@ -12,7 +12,7 @@ function Blog(props) {
           </div>
           {post.data.image.url && (
             <img
-              className="center img-responsive"
+              className="center img-fluid"
               style={{ height: "300px" }}
               src={post.data.image.url}
               alt={post.data.image.alt}

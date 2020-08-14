@@ -9,7 +9,8 @@ import Videos from "./components/videos";
 import Blog from "./components/blog";
 import Shop from "./components/shop";
 import SocialIcons from "./components/SocialIcons";
-import Prismic from "prismic-javascript"
+import Prismic from "prismic-javascript";
+import logo from "./images/dot_o_logo_all_white.png"
 
 class App extends Component {
   constructor(props) {
@@ -73,24 +74,18 @@ class App extends Component {
   render() {
     return <HashRouter>
       <div className="container Wole-container">
-        <div className="row">
-          <div>
-            <div>
-              <div className="col-md-5">
-                <SocialIcons />
-              </div>
-              <div className="col-md-2">
-                <NavLink exact to="/">
-                  <img src="dot_o_logo.png" className="logo img-responsive center-block" alt="dot_o" />
-                </NavLink>
-              </div>
-              <div className="col-md-5"></div>
-            </div>
+        <div id="logo_section" className="row">
+          <div className="row">
+            <NavLink exact to="/">
+              <img src={logo} className="logo img-fluid center-block" alt="dot_o" />
+            </NavLink>
+          </div>
+          <div className="row wole-menu" >
             <Menu />
           </div>
         </div>
         <div className="row">
-          <div id="content" style={{ margin: "10px 60px" }}>
+          <div id="content" className="row">
             <Route exact path="/"
               render={props => <Home
                 show_img={this.state.latest_show}
@@ -102,6 +97,11 @@ class App extends Component {
             <Route path="/videos" render={props => <Videos video_items={this.state.videos_tab_items} />} />
             <Route path="/blog" render={props => <Blog posts={this.state.posts} />} />
             <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items} />} />
+            <div id="footer">
+                <div style={{textAlign: "center"}}>Join the DOT O email list</div>
+                <input type="text" class="form-control" placeholder="enter your email here*"></input>
+                <button type="button" class="btn btn-light">SIGN ME UP</button>
+            </div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ body {
 }
 
 .logo {
-  height: 120px;
+  height: 10rem;
   margin-bottom: 10px;
   margin-top: 10px;
   
@@ -19,6 +19,79 @@ body {
   transition-property: transform;
 }
 
+.row {
+  justify-content: center;
+}
+
+#logo_section{
+  background-image: url("images/dot_o_stroke_bg.png");
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 23rem;
+}
+
+.wole-menu{
+  margin-top: 13vh;
+}
+
+.Wole-container {
+  padding: 20px;
+  margin-left: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+a {
+  color: grey;
+}
+
+a:hover {
+  color: red;
+}
+.nav{
+ width: 50vw;
+}
+
+.nav-link {
+  font-weight: 900;
+}
+
+.nav-pills .nav-link.active {
+  background-color: transparent
+}
+
+#content { 
+  display: flex;
+  justify-content: center;
+  padding: 3vh 5vw;
+  padding-bottom: 15vw;
+  margin:  0rem 7.25rem;
+  margin-right: 8.15rem;
+  border: 0.45rem solid white;
+  border-top: none;
+  width: 75vw;
+  position: relative;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  bottom: -20vh;
+  z-index: 1;
+  width: 20vw;
+  height: 15vw;
+  background-color: black;
+}
+
+.words {
+  padding: 1vw;
+  margin-top: 5vh;
+  font-weight: 700;
+}
+/* 
 .social-container{
   text-align: center;
 }
@@ -32,12 +105,7 @@ body {
   height: 30px;
 }
 
-.Wole-container {
-  padding: 20px;
-  margin-left: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-}
+
 
 .wole-menu {
   color: red;
@@ -60,7 +128,6 @@ body {
   font-size: 25px;
 }
 
-/* #D93A2F */
 
 h1 {
   font-weight: 700;
@@ -95,4 +162,4 @@ iframe {
 #latest_event>a:hover, #latest_event>a:focus{
   color: #D93A2F;
   text-decoration: none;
-}
+} */
