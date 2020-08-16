@@ -8,11 +8,14 @@ function Videos(props) {
     //sort the videos by order property
     var videos = props.video_items.sort((a,b)=>{return a.data.order - b.data.order})
     video_objects = videos.map(function(video, index){
-      return (<YoutubeVideo url={video.data.youtube_link.url} key={video.id}/>)
+      return (
+      <div key={video.id} className="video embed-responsive embed-responsive-4by3">
+        <YoutubeVideo url={video.data.youtube_link.url}/>
+      </div> )
     })
   }
   return (
-    <div>
+    <div className="video-container">
       {video_objects}
     </div>
   );

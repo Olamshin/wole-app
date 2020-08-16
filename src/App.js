@@ -75,9 +75,9 @@ class App extends Component {
     return <HashRouter>
       <div className="container Wole-container">
         <div id="logo_section" className="row">
-          <div className="row">
-            <NavLink exact to="/">
-              <img src={logo} className="logo img-fluid center-block" alt="dot_o" />
+          <div className="row" style={{justifyContent:"center", display: "relative"}}>
+            <NavLink className="logo" exact to="/">
+              <img src={logo} className="img-fluid center-block" alt="dot_o" />
             </NavLink>
           </div>
           <div className="row wole-menu" >
@@ -100,7 +100,8 @@ class App extends Component {
             <div id="footer">
                 <div style={{textAlign: "center"}}>Join the DOT O email list</div>
                 <input type="text" class="form-control" placeholder="enter your email here*"></input>
-                <button type="button" class="btn btn-light">SIGN ME UP</button>
+                <button type="button" class="btn btn-light disabled">SIGN ME UP</button>
+                <SocialIcons/>
             </div>
           </div>
         </div>
