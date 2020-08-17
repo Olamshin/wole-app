@@ -11,9 +11,12 @@ function Home(props) {
     video = (<p>Loading Home Video...</p>)
   }
   return (
-    <div className="row">
-      {video}
-      <hr />
+    <div className="row" style={{
+      flexDirection: "column", justifyContent: "space-around", height: "100%"
+    }}>
+      <div className="embed-responsive" style={{ width: "100%", height: "450px", margin: "10px" }}>
+        {video}
+      </div>
       <div className="row">
         <div className="col-sm-2"></div>
         <div className="col-sm-8">

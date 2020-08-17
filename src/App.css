@@ -21,7 +21,7 @@ body {
     width: 100%;
     justify-content: center;
   }
-  .logo{
+  .logo {
     display: none;
   }
 }
@@ -154,6 +154,17 @@ a:hover {
   }
 }
 
+#show-more-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#show-more {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 #footer {
   display: flex;
   flex-direction: column;
@@ -215,6 +226,20 @@ a:hover {
 
 .music {
   margin: 10px;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border: 10px solid transparent;
+  position: relative;
+  top: 10px;
+  margin: 0px 10px;
+}
+
+.caret.down {
+  border-top-color: grey;
 }
 
 /* 

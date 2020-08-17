@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, NavLink, HashRouter } from "react-router-dom";
+import { Route, NavLink, withRouter} from "react-router-dom";
 import "./App.css";
 import Menu from "./components/menu";
 import Home from "./components/home";
@@ -19,7 +19,8 @@ class App extends Component {
     this.state = {
       bio_words: null,
       posts: null,
-      latest_show: null
+      latest_show: null,
+      show_flag: false,
     };
 
     const apiEndpoint = 'https://wole-app.prismic.io/api/v2';
@@ -71,21 +72,32 @@ class App extends Component {
     });
   }
 
+  show_more = () => {
+    this.setState({ show_flag: true });
+  }
+
+
+  componentDidMount() {
+    this.unlisten = this.props.history.listen((location, action) => {
+      this.setState({ show_flag: false });
+    });
+  }
+
   render() {
-    return <HashRouter>
-      <div className="container Wole-container">
-        <div id="logo_section" className="row">
-          <div className="row" style={{justifyContent:"center", display: "relative"}}>
-            <NavLink className="logo" exact to="/">
-              <img src={logo} className="img-fluid center-block" alt="dot_o" />
-            </NavLink>
-          </div>
-          <div className="row wole-menu" >
-            <Menu />
-          </div>
+    return <div className="container Wole-container">
+      <div id="logo_section" className="row">
+        <div className="row" style={{ justifyContent: "center", display: "relative" }}>
+          <NavLink className="logo" exact to="/">
+            <img src={logo} className="img-fluid center-block" alt="dot_o" />
+          </NavLink>
         </div>
-        <div className="row">
-          <div id="content" className="row">
+        <div className="row wole-menu" >
+          <Menu />
+        </div>
+      </div>
+      <div className="row">
+        <div id="content" className="row">
+          <div id="show-more-container" style={{ height: this.state.show_flag ? "100%" : "120vh" }}>
             <Route exact path="/"
               render={props => <Home
                 show_img={this.state.latest_show}
@@ -97,17 +109,20 @@ class App extends Component {
             <Route path="/videos" render={props => <Videos video_items={this.state.videos_tab_items} />} />
             <Route path="/blog" render={props => <Blog posts={this.state.posts} />} />
             <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items} />} />
-            <div id="footer">
-                <div style={{textAlign: "center"}}>Join the DOT O email list</div>
-                <input type="text" class="form-control" placeholder="enter your email here*"></input>
-                <button type="button" class="btn btn-light disabled">SIGN ME UP</button>
-                <SocialIcons/>
-            </div>
+          </div>
+          <div id="show-more" onClick={this.show_more}>
+            <span className="caret down"></span>
+            <span className="show-more-words">Show more</span></div>
+          <div id="footer">
+            <div style={{ textAlign: "center" }}>Join the DOT O email list</div>
+            <input type="text" className="form-control" placeholder="enter your email here*"></input>
+            <button type="button" className="btn btn-light disabled">SIGN ME UP</button>
+            <SocialIcons />
           </div>
         </div>
       </div>
-    </HashRouter>;
+    </div>;
   }
 }
 
-export default App;
+export default withRouter(App);
