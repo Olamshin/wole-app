@@ -12,17 +12,12 @@ function Home(props) {
   }
   return (
     <div className="row" style={{
-      flexDirection: "column", justifyContent: "space-around", height: "100%"
+      flexDirection: "column", height: "100%"
     }}>
-      <div className="embed-responsive" style={{ width: "100%", height: "450px", margin: "10px" }}>
-        {video}
-      </div>
-      <div className="row">
-        <div className="col-sm-2"></div>
-        <div className="col-sm-8">
-          <Show {...props} />
+      <div className="home-video-container">
+        <div className="embed-responsive" style={{ width: "100%", height: "450px", margin: "10px" }}>
+          {video}
         </div>
-        <div className="col-sm-2"></div>
       </div>
     </div>
   );

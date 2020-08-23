@@ -1,5 +1,11 @@
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 .logo:hover {
@@ -9,28 +15,51 @@ body {
   -o-transform: rotate(360deg);
 }
 
-@media (max-width: 767.98px) {
+/* @media (max-width: 412px) {
+  .container {
+    max-width: 411px;
+  }
+} */
+
+@media (min-width: 370px) {
+
+
   #logo_section {
-    background-image: none;
+    background-image: url("images/dot_o_stroke_bg.png");
+    background-size: cover;
     flex-direction: column;
     align-content: center;
-    height: 100%;
+    height: 220px;
+  }
+  #tagline {
+    justify-content: center;
+    font-size: 1rem;
+    display: flex;
   }
   .wole-menu {
-    margin-top: 10px;
-    width: 100%;
+    width: 70%;
     justify-content: center;
   }
   .logo {
-    display: none;
+    height: 3rem;
+    width: 3rem;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
   }
 }
 
 @media (min-width:768px) {
   .wole-menu {
-    margin-top: 30px;
-    width: 70%;
+    width: 60%;
     justify-content: center;
+  }
+  #tagline {
+    justify-content: center;
+    font-size: 1.5rem;
+    display: flex;
   }
   #logo_section {
     background-image: url("images/dot_o_stroke_bg.png");
@@ -51,11 +80,14 @@ body {
 }
 
 @media (min-width:992px) {
-  .wole-menu {
-    margin-top: 60px;
-  }
+  .wole-menu {}
   #logo_section {
     height: 340px;
+  }
+  #tagline {
+    justify-content: center;
+    font-size: 2.5rem;
+    display: flex;
   }
   .logo {
     height: 10rem;
@@ -65,24 +97,20 @@ body {
 }
 
 @media (min-width:1200px) {
-  .wole-menu {
-    margin-top: 80px;
-  }
+  .wole-menu {}
   #logo_section {
-    height: 380px;
+    height: 393px;
+  }
+  #tagline {
+    justify-content: center;
+    font-size: 3rem;
+    display: flex;
   }
   .logo {
     height: 11rem;
     width: 11rem;
     margin-top: 60px;
   }
-}
-
-.Wole-container {
-  padding: 20px;
-  margin-left: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
 }
 
 a {
@@ -121,18 +149,23 @@ a:hover {
 
 @media (max-width: 767.98px) {
   #content {
-    border-inline-width: 4.2px;
-    width: 555.6px;
-    margin: 30px;
+    border: 2.8px solid white;
+    border-top: none;
+    margin-left: 42px;
+    margin-bottom: 42px;
+    width: 323px;
+    padding: 5px 10px;
+    padding-bottom: 20px;
+    align-content: flex-start;
   }
 }
 
 @media (min-width:768px) {
   #content {
-    border: 4.8px solid white;
+    border: 4.3px solid white;
     border-top: none;
-    margin-left: 72.63px;
-    width: 555.6px;
+    margin-left: 74px;
+    width: 563.6px;
     padding: 29.73px 49.91px;
     padding-bottom: 149.75px;
   }
@@ -140,17 +173,17 @@ a:hover {
 
 @media (min-width:992px) {
   #content {
-    border-inline-width: 6.75px;
-    margin-left: 97px;
-    width: 743.5px;
+    border-width: 6.5px;
+    margin-left: 98px;
+    width: 752px;
   }
 }
 
 @media (min-width:1200px) {
   #content {
-    border-inline-width: 7.2px;
-    margin-left: 116px;
-    width: 883.5px;
+    border-width: 7.2px;
+    margin-left: 116.5px;
+    width: 892.5px;
   }
 }
 
@@ -158,6 +191,22 @@ a:hover {
   width: 100%;
   overflow: hidden;
   position: relative;
+}
+
+.show-content-more {
+  height: auto;
+}
+
+@media (max-width:767px) {
+  .show-content-less {
+    height: 80vh;
+  }
+}
+
+@media (min-width:768px) {
+  .show-content-less {
+    height: 120vh;
+  }
 }
 
 #show-more {
@@ -203,6 +252,26 @@ a:hover {
   height: 40px;
 }
 
+@media(max-width: 767.98px) {
+  .home-video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 30vh;
+  }
+}
+
+@media(min-width: 768px) {
+  .home-video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 80vh;
+  }
+}
+
 .video-container {
   display: flex;
   flex-direction: column;
@@ -234,12 +303,17 @@ a:hover {
   display: inline-block;
   border: 10px solid transparent;
   position: relative;
-  top: 10px;
   margin: 0px 10px;
 }
 
 .caret.down {
+  top: 10px;
   border-top-color: grey;
+}
+
+.caret.up {
+  bottom: 6px;
+  border-bottom-color: grey;
 }
 
 /* 

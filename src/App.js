@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, NavLink, withRouter} from "react-router-dom";
+import { Route, NavLink, withRouter } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/menu";
 import Home from "./components/home";
@@ -22,6 +22,8 @@ class App extends Component {
       latest_show: null,
       show_flag: false,
     };
+
+    this.showMoreContainerRef = React.createRef()
 
     const apiEndpoint = 'https://wole-app.prismic.io/api/v2';
 
@@ -73,7 +75,20 @@ class App extends Component {
   }
 
   show_more = () => {
-    this.setState({ show_flag: true });
+    let containerHeight = this.showMoreContainerRef.current.offsetHeight
+    let containerChildrenHeight = 0
+    let children = this.showMoreContainerRef.current.children
+
+    Array.from(children).forEach(element => {
+      containerChildrenHeight += element.offsetHeight
+    });
+
+    if (!this.state.show_flag && containerChildrenHeight > containerHeight) {
+      this.setState({ show_flag: true });
+    }
+    else {
+      this.setState({ show_flag: false });
+    }
   }
 
 
@@ -84,20 +99,24 @@ class App extends Component {
   }
 
   render() {
-    return <div className="container Wole-container">
+    return <div className="container h-100">
       <div id="logo_section" className="row">
         <div className="row" style={{ justifyContent: "center", display: "relative" }}>
           <NavLink className="logo" exact to="/">
             <img src={logo} className="img-fluid center-block" alt="dot_o" />
           </NavLink>
         </div>
+        <div id="tagline"
+          className={this.props.location.pathname === "/" ? "row" : "row invisible"}>
+          <span>Drawing Out the Oneness</span>
+        </div>
         <div className="row wole-menu" >
           <Menu />
         </div>
       </div>
-      <div className="row">
+      <div className="row h-100">
         <div id="content" className="row">
-          <div id="show-more-container" style={{ height: this.state.show_flag ? "100%" : "120vh" }}>
+          <div id="show-more-container" ref={this.showMoreContainerRef} className={this.state.show_flag ? "show-content-more" : "show-content-less"}>
             <Route exact path="/"
               render={props => <Home
                 show_img={this.state.latest_show}
@@ -111,8 +130,8 @@ class App extends Component {
             <Route path="/shop" render={props => <Shop shop_items={this.state.shop_items} />} />
           </div>
           <div id="show-more" onClick={this.show_more}>
-            <span className="caret down"></span>
-            <span className="show-more-words">Show more</span></div>
+            <span className={this.state.show_flag ? "caret up" : "caret down"}></span>
+            <span className="show-more-words">{this.state.show_flag ? "Show Less" : "Show More"}</span></div>
           <div id="footer">
             <div style={{ textAlign: "center" }}>Join the DOT O email list</div>
             <input type="text" className="form-control" placeholder="enter your email here*"></input>
