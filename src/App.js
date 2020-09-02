@@ -81,6 +81,7 @@ class App extends Component {
 
     Array.from(children).forEach(element => {
       containerChildrenHeight += element.offsetHeight
+      console.log(element.offsetHeight)
     });
 
     if (!this.state.show_flag && containerChildrenHeight > containerHeight) {
@@ -107,7 +108,7 @@ class App extends Component {
           </NavLink>
         </div>
         <div id="tagline"
-          className={this.props.location.pathname === "/" ? "row" : "row invisible"}>
+          className="row">
           <span>Drawing Out the Oneness</span>
         </div>
         <div className="row wole-menu" >
@@ -131,11 +132,12 @@ class App extends Component {
           </div>
           <div id="show-more" onClick={this.show_more}>
             <span className={this.state.show_flag ? "caret up" : "caret down"}></span>
-            <span className="show-more-words">{this.state.show_flag ? "Show Less" : "Show More"}</span></div>
+            <span className="show-more-words">{this.state.show_flag ? "Show Less" : "Show More"}</span>
+          </div>
           <div id="footer">
             <div style={{ textAlign: "center" }}>Join the DOT O email list</div>
-            <input type="text" className="form-control" placeholder="enter your email here*"></input>
-            <button type="button" className="btn btn-light disabled">SIGN ME UP</button>
+            <a className="btn btn-light" href="https://officialdoto.us17.list-manage.com/subscribe/post?u=dce8d5092fa340e293e4da586&amp;id=84a7cd2415"
+            target="_blank">SIGN ME UP</a>
             <SocialIcons />
           </div>
         </div>

@@ -1,34 +1,27 @@
 import React from "react";
 import PrismicDOM from "prismic-dom"
+import shop_shirt from "../images/shop_shirt.jpg"
+import teespring from "../images/teespring.png"
 
 function Shop(props) {
-  if (props.shop_items) {
-    var shop_items = props.shop_items.map(function (item, index) {
-      return (
-        <div key={item.id} className="row" style={{ margin: "10px" }}>
-          <img src={item.data.image.url}
-            className="img-fluid"
-            alt={item.data.image.alt}
-            style={{
-              height: "200px",
-              border: "1px solid red",
-              display: "inline-block"
-            }} />
-          <div style={{
-            display: "inline-block",
-            position: "relative",
-            bottom: "-20px",
-            marginLeft: "10px"
-          }}
-          dangerouslySetInnerHTML={{ __html:PrismicDOM.RichText.asText(item.data.paypal_html, null)}}
-          >
-          </div>
-        </div>
-      )
-    })
-    return <div>{shop_items}</div>
-  }
-  return <p>Loading the Store....</p>;
+  return (<div className="row" style={{ margin: "10px", flexDirection: "column", alignContent: "center" }}>
+    <img src={shop_shirt}
+      className="img-fluid"
+      style={{
+        display: "inline-block"
+      }} />
+    <div style={{
+      display: "inline-block",
+      position: "relative",
+      margin: "auto",
+      width: "50%",
+    }}
+    >
+      <a className="badge mt-2 bg-light" href="https://teespring.com/new-back-on-my-shit?pid=934&cid=103881" target="_blank">
+        <img src={teespring} className="img-fluid" />
+      </a>
+    </div>
+  </div>);
 }
 
 export default Shop;
