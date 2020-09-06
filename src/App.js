@@ -137,7 +137,7 @@ class App extends Component {
           <div id="footer">
             <div style={{ textAlign: "center" }}>Join the DOT O email list</div>
             <a className="btn btn-light" href="https://officialdoto.us17.list-manage.com/subscribe/post?u=dce8d5092fa340e293e4da586&amp;id=84a7cd2415"
-            target="_blank">SIGN ME UP</a>
+            target="_blank" rel="noopener noreferrer">SIGN ME UP</a>
             <SocialIcons />
           </div>
         </div>

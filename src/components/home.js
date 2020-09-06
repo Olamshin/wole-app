@@ -1,6 +1,5 @@
 import React from "react";
 import YoutubeVideo from "./YouTubeVideo";
-import Show from "./show";
 import apple_music_logo from "../images/applemusic.png"
 import spotify_logo from "../images/spotify-badge.png"
 import google_play_logo from "../images/google-play-badge.png"
@@ -27,34 +26,35 @@ function Home(props) {
       </div>
       <div className="col-sm">
         <div className="mx-auto w-75">
-        <a className="badge w-100" href="https://music.apple.com/us/album/yee-yee/1475923671?uo=4" target="_blank">
-          <img src={apple_music_logo} className="img-fluid" />
+        <a className="badge w-100" href="https://music.apple.com/us/album/yee-yee/1475923671?uo=4" target="_blank" rel="noopener noreferrer">
+          <img src={apple_music_logo} className="img-fluid" alt=""/>
         </a>
       </div>
         <div className="mx-auto w-75">
-          <a className="badge" href="https://open.spotify.com/album/1kUsrHHtJ1sPq8gCXUS9w0" target="_blank">
-            <img src={spotify_logo} className="img-fluid" />
+          <a className="badge" href="https://open.spotify.com/album/1kUsrHHtJ1sPq8gCXUS9w0" target="_blank" rel="noopener noreferrer">
+            <img src={spotify_logo} className="img-fluid" alt=""/>
           </a>
         </div>
         <div className="mx-auto w-75">
-          <a className="badge" href="https://play.google.com/store/music/album/Dot_O_Yee_Yee?id=Blenzxxitzrct2syq335az2pkua" target="_blank">
-            <img src={google_play_logo} className="img-fluid" />
+          <a className="badge" href="https://play.google.com/store/music/album/Dot_O_Yee_Yee?id=Blenzxxitzrct2syq335az2pkua" target="_blank" rel="noopener noreferrer">
+            <img src={google_play_logo} className="img-fluid" alt=""/>
           </a>
         </div>
         <div className="mx-auto w-75">
-          <a className="badge" href="https://www.iheart.com/artist/id-31680716/albums/id-77937370" target="_blank">
-            <img src={iheartradio_logo} className="img-fluid" />
+          <a className="badge" href="https://www.iheart.com/artist/id-31680716/albums/id-77937370" target="_blank" rel="noopener noreferrer">
+            <img src={iheartradio_logo} className="img-fluid" alt=""/>
           </a>
         </div>
         <div className="mx-auto w-75">
-          <a className="badge" href="https://us.napster.com/artist/dot-o/album/yee-yee" target="_blank">
-            <img src={napster_logo} className="img-fluid" />
+          <a className="badge" href="https://us.napster.com/artist/dot-o/album/yee-yee" target="_blank" rel="noopener noreferrer">
+            <img src={napster_logo} className="img-fluid" alt=""/>
           </a>
         </div>
         </div>
         <div className="col-sm">
-        <a className="badge w-100" href="https://www.patreon.com/dot_o?fan_landing=true" target="_blank">
-          <img src={patreon_logo} className="img-fluid" />
+        <a className="badge w-100" href="https://www.patreon.com/dot_o?fan_landing=true" target="_blank" rel="noopener noreferrer">
+        <span className="d-block">CLICK HERE TO SUPPORT ME ON</span>
+          <img src={patreon_logo} className="img-fluid" alt=""/>
         </a>
         <p>
           Hey what’s going on?

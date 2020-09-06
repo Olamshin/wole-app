@@ -7,9 +7,11 @@ function Music(props) {
   "https://open.spotify.com/embed/album/6MjaVcWnQd9inlUzV3WCrN",
   "https://open.spotify.com/embed/album/068CkWL1216rhpxDynffc9"
 ]
-  var music = music_items.map((m)=>{
+  var music = music_items.map((m,i)=>{
+    const title = `music${i}`
       return (
         <iframe
+        title={title}
         src={m}
         width="300" 
         height="380" 

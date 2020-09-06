@@ -5,7 +5,7 @@ function Menu(props) {
   return (
     <ul className="nav nav-pills nav-justified">
       <li role="presentation" className="nav-item">
-        <NavLink className="nav-link" to="/">HOME</NavLink>
+        <NavLink className="nav-link" to="/" exact>HOME</NavLink>
       </li>
       <li role="presentation" className="nav-item">
         <NavLink className="nav-link" to="/music">MUSIC</NavLink>
